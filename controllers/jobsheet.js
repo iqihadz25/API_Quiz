@@ -27,7 +27,7 @@ exports.submitOne = async (req, res) => {
             }
         } catch (e) {
             res.status(500).json({ message: e.message });
-        }
+        }
     };
 
 exports.submitMany = async (req, res) => {
