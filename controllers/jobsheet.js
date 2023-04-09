@@ -3,32 +3,32 @@ const Quiz = db.quizzes;
 
 exports.submitOne = async (req, res) => {
 
-    // data yang didapatkan dari inputan oleh user
-    const jobsheet = {
-        quizId: req.body.quizId,
-        answer: req.body.answer,
-    };
-
-    try {
-        var quiz = await Quiz.findOne({
-            where: {
-                id: req.body.quizId
+        // data yang didapatkan dari inputan oleh user
+        const jobsheet = {
+            quizId: req.body.quizId,
+            answer: req.body.answer,
+        };
+    
+        try {
+            var quiz = await Quiz.findOne({
+                where: {
+                    nomor: req.body.quizId
+                }
+            });
+    
+            if (req.body.answer == quiz.key) {
+                res.status(200).json({
+                    "message": "benar"
+                })
+            } else {
+                res.status(200).json({
+                    "message": `Ini benernya cuy ${quiz.key}`
+                })
             }
-        });
-
-        if (req.body.answer == quiz.key) {
-            res.status(200).json({
-                "message": "YOI LUR"
-            })
-        } else {
-            res.status(200).json({
-                "message": `Ini benernya cuy ${quiz.key}`
-            })
-        }
-    } catch (e) {
-        res.status(500).json({ message: e.message });
-    }
-};
+        } catch (e) {
+            res.status(500).json({ message: e.message });
+        }
+    };
 
 exports.submitMany = async (req, res) => {
     //Async = Promise (Asyncron code)

@@ -1,0 +1,42 @@
+"data": [
+        {
+            "id": 1,
+		"provinsi" : "jawa",
+            "data": [
+			{
+				"id" : 1
+				"judul": "Test",
+            		"gambar": "Test",
+           			"isi": "Test",
+			},
+			{
+				"id" : 2
+				"judul": "Test",
+            		"gambar": "Test",
+           			"isi": "Test",
+			},
+		]
+            "createdAt": "2023-04-06T04:22:12.000Z",
+            "updatedAt": "2023-04-06T04:22:12.000Z"
+        },
+	{
+            "id": 2,
+		"provinsi" : "sumatra",
+            "provinsi": [
+			{
+				"id" : 1
+				"judul": "Test",
+            		"gambar": "Test",
+           			"isi": "Test",
+			},
+			{
+				"id" : 2
+				"judul": "Test",
+            		"gambar": "Test",
+           			"isi": "Test",
+			},
+		]
+            "createdAt": "2023-04-06T04:22:12.000Z",
+            "updatedAt": "2023-04-06T04:22:12.000Z"
+	}
+]

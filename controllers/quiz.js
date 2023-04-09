@@ -91,32 +91,15 @@ exports.findOne = async (req, res) => {
 };
 
 //FIND BY CATEGORY: Menampilkan data berdasarkan category 
-exports.getByCategoryId = async (req, res) => {
-    const id = req.params.id
-    const quizzes = await Quiz.findAll({
+exports.getByNomor = async (req, res) => {
+    const nomor = req.params.nomor
+    const quizzes = await Quiz.findOne({
         where : {
-            categoryId: id
+            nomor: nomor
         }
     })
     res.json({
-        message: `Quizzes retrieved successfully with categoryId=${id}!`,
+        message: `Quizzes retrieved successfully with nomor=${nomor}!`,
         data: quizzes,
     });
-}
-
-//FIND BY LEVEL: Menampilkan data berdasarkan level 
-exports.getByLevelId = async (req, res) => {
-    const id = req.params.id
-    try {
-    const quizzes = await Quiz.findAll({
-        where : {
-            levelId: id
-        }
-    })
-} catch {
-    res.json({
-        message: `Quizzes retrieved successfully with levelId=${id}!`,
-        data: quizzes,
-    });
-}
 }
